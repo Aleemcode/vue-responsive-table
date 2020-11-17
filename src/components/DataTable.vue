@@ -67,6 +67,7 @@ export default {
     overflow-x: auto;
     border-collapse: collapse;
     border-spacing: 0;
+    cursor: pointer;
 
     th {
    background-color: rgb(40,57,75);
