@@ -46,7 +46,7 @@ export default {
     try {
     this.details = await axios.get(url).then(res => res.data.data);
     console.log("Details:", this.details);
-    this.error = null;
+    this.error = "Error!!! API not hitted";
   } catch (error) {
     this.details = null;
     this.error = error;
@@ -57,14 +57,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+.container {
+  margin: 2rem;
+}
 .rtable {
     display: inline-block;
     width: 100%;
-    // max-width: 100%;
-    // width: 1200px;
+    position: relative;
     overflow-x: auto;
-
     border-collapse: collapse;
     border-spacing: 0;
 
@@ -93,37 +93,18 @@ export default {
   position: sticky;
   left: 0;
   z-index: 10;
-  // -webkit-box-shadow: 0px 10px 26px 3px rgba(18, 24, 29, 0.205);
-  // -moz-box-shadow: 1px 1px 26px 3px rgba(18, 24, 29, 0.205);
-  // box-shadow: 1px 1px 26px 3px rgba(18, 24, 29, 0.205);
 }
+
   
 }
 
-.rtable,
-.rtable--flip tbody {
-  // optional - enable iOS momentum scrolling
-  -webkit-overflow-scrolling: touch;
+table {
+      -webkit-box-shadow: 0px 0px 26px 3px rgba(18, 24, 29, 0.205);
+      -moz-box-shadow: 0px 0px 26px 3px rgba(18, 24, 29, 0.205);
+      box-shadow: 0px 0px 26px 3px rgba(18, 24, 29, 0.205);
+  }
   
-  // scrolling shadows
-  background: radial-gradient(left, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 0 center,
-              radial-gradient(right, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 100% center;
-  background-size: 10px 100%, 10px 100%;
-  background-attachment: scroll, scroll;
-  background-repeat: no-repeat;
-}
 
-.rtable, tbody {
-  // optional - enable iOS momentum scrolling
-  -webkit-overflow-scrolling: touch;
-  
-  // scrolling shadows
-  background: radial-gradient(left, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 0 center,
-              radial-gradient(right, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 100% center;
-  background-size: 10px 100%, 10px 100%;
-  background-attachment: scroll, scroll;
-  background-repeat: no-repeat;
-}
 
 .rtable th,
 .rtable td {
@@ -146,20 +127,11 @@ only screen and (max-width: 760px),
 		display: block; 
 	}
 
-  thead {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  -webkit-box-shadow: 0px 10px 26px 3px rgba(18, 24, 29, 0.205);
-  -moz-box-shadow: 1px 1px 26px 3px rgba(18, 24, 29, 0.205);
-  box-shadow: 1px 1px 26px 3px rgba(18, 24, 29, 0.205);
-}
  }
 
 
 // .container  {
-//   padding: 2rem;
+//   
 //   width: 100%;
 // }
 // .table-scroll {
